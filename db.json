@@ -7,9 +7,9 @@
       "answersCount": 20,
       "hour": "16",
       "minute": "48",
-      "year": "1398",
-      "month": "05",
-      "day": "06",
+      "year": "۱۴۰۱",
+      "month": "۰۱",
+      "day": "۰۷",
       "summary": "سلام من می خوام یه Athintication ساده توی React بسازم اما این error رو بهم میده.نمیدونم مشکل از کجاست.عکس خروجی console رو هم گذاشتم که ببینید دقیق چه مشکلی وجود داره.",
       "profilePic": "user4.png"
     },
@@ -20,9 +20,9 @@
       "answersCount": 20,
       "hour": "16",
       "minute": "48",
-      "year": "1398",
-      "month": "05",
-      "day": "06",
+      "year": "۱۴۰۱",
+      "month": "۰۱",
+      "day": "۰۷",
       "summary": "سلام من می خوام یه Athintication ساده توی React بسازم اما این error رو بهم میده.نمیدونم مشکل از کجاست.عکس خروجی console رو هم گذاشتم که ببینید دقیق چه مشکلی وجود داره.",
       "profilePic": "user4.png"
     }
@@ -33,25 +33,28 @@
       "qid": "q1",
       "userName": "علی کیا",
       "userProfilePic": "user4.png",
-      "body": "",
-      "upVotes": 0,
-      "downVotes": 0,
+      "body": "متغیر ENV رو توی فایلت تغییر بده درست میشه.",
+      "upVotes": 20,
+      "downVotes": 2,
       "hour": "16",
       "minute": "48",
       "year": "1398",
       "month": "05",
-      "day": "06",
-      "createdAt": 1651753080
+      "day": "06"
     },
     {
       "id": "a2",
       "qid": "q1",
       "userName": "محسن افشاری",
       "userProfilePic": "user1.png",
-      "body": "",
-      "upVotes": 0,
-      "downVotes": 0,
-      "createdAt": 1651753080
+      "body": "سوال اشتباه است",
+      "upVotes": 1,
+      "downVotes": 99,
+      "hour": "16",
+      "minute": "48",
+      "year": "1398",
+      "month": "05",
+      "day": "06"
     }
   ],
   "users": [

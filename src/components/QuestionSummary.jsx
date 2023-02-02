@@ -6,8 +6,6 @@ import { toFarsiNumber } from "../util";
 
 export default function QuestionSummary({showBody, question}) {
   // const question = useSelector((state) => state.questions);
-
-  console.log({question})
   
   return (
     <div className="mb-14 rounded-lg bg-gray-100 shadow">
@@ -48,7 +46,7 @@ export default function QuestionSummary({showBody, question}) {
           <div className="text-sm px-4 py-5">{question.summary}</div>
           <div className="self-end p-4 mb-2">
             <Link
-              to="/question/123"
+                to={"/question/" + question.id}
               className="text-green-600 border-2 border-green-600 rounded-lg  items-center  w-28 h-9 text-xs px-3 py-2"
             >
               مشاهده جزییات

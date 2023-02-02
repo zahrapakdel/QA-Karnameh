@@ -1,6 +1,6 @@
 import axios from "axios"
 import store from "./store"
-import {setQuestions} from "./store/actions"
+import {setActiveQuestion, setQuestions} from "./store/actions"
 
 const apiUrl = "http://localhost:3000"
 
@@ -14,4 +14,11 @@ export const getQuestions = async () => {
 export const postQuestion = async (question) => {
     const res = await axios.post(url("questions"), { ...question })
     await getQuestions()
+}
+
+export const getQuestionDetails = async (qid) => {
+    const question = (await axios.get(url(`questions?id=${qid}`))).data[0]
+    const answers = (await axios.get(url(`answers?qid=${qid}`))).data
+
+    store.dispatch({ type: setActiveQuestion, payload: { activeQuestion: { ...question, answers } } })
 }
