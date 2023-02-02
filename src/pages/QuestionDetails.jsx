@@ -24,7 +24,7 @@ export default function QuestionDetails() {
           <div>
             {renderAnswers()}
           </div>
-          <AnswerForm />
+          <AnswerForm qid={qid}/>
         </div>
       ) : null}
     </>
