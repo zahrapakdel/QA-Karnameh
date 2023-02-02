@@ -27,7 +27,32 @@ export const getQuestionDetails = async (qid) => {
 };
 
 export const postAnswers = async (answer) => {
-  const res = await axios.post(url("answers"), { ...answer });
+  var res = await axios.post(url("answers"), { ...answer });
+  const answers = (await axios.get(url(`answers?qid=${answer.qid}`))).data;
+
+  const question = store.getState().activeQuestion;
+  res = await axios.put(url("questions/" + question.id), {
+    ...question,
+    answers: undefined,
+    answersCount: question.answersCount + 1,
+  });
+  store.dispatch({
+    type: setActiveQuestion,
+    payload: {
+      activeQuestion: {
+        ...question,
+        answers,
+        answersCount: question.answersCount + 1,
+      },
+    },
+  });
+};
+
+export const putUpVote = async (answer) => {
+  const res = axios.put(url("answers/" + answer.id), {
+    ...answer,
+    upVotes: answer.upVotes + 1,
+  });
   const answers = (await axios.get(url(`answers?qid=${answer.qid}`))).data;
 
   const question = store.getState().activeQuestion;
@@ -37,19 +62,11 @@ export const postAnswers = async (answer) => {
   });
 };
 
-export const putUpVote = async (answer) => {
-    const res = axios.put(url("answers/"+answer.id), { ...answer, upVotes: answer.upVotes + 1 })
-    const answers = (await axios.get(url(`answers?qid=${answer.qid}`))).data;
-
-    const question = store.getState().activeQuestion;
-    store.dispatch({
-      type: setActiveQuestion,
-      payload: { activeQuestion: { ...question, answers } },
-    });
-}
-
 export const putDownVote = async (answer) => {
-  const res = axios.put(url("answers/"+answer.id), { ...answer, downVotes: answer.downVotes + 1 });
+  const res = axios.put(url("answers/" + answer.id), {
+    ...answer,
+    downVotes: answer.downVotes + 1,
+  });
   const answers = (await axios.get(url(`answers?qid=${answer.qid}`))).data;
 
   const question = store.getState().activeQuestion;
