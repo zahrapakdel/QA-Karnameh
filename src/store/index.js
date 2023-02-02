@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { addAnswer, addQuestion, setActiveQuestion, upVote, downVote } from "./actions";
+import { addAnswer, addQuestion, setActiveQuestion, upVote, downVote, setQuestions } from "./actions";
 
 const initialState = {
     user: {
@@ -33,6 +33,11 @@ const reducer = (state=initialState, {type, payload}) => {
             var tmp = { ...state }
             tmp.activeQuestion.downVotes += 1
             return tmp
+        case setQuestions:
+            return {
+                ...state,
+                questions: payload.questions
+            }
         default:
             return state
     }
