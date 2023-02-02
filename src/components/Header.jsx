@@ -1,5 +1,6 @@
 import { FaPlus, FaCaretDown } from "react-icons/fa";
-import React from "react";
+import React, { useState } from "react";
+import NewQuestionModal from "./NewQuestionModal";
 
 const mockData = {
     profileName: "الناز شاکردوست",
@@ -8,6 +9,7 @@ const mockData = {
 }
 
 export default function Header() {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div>
       <nav className="navbar navbar-expand-lg py-4 px-14 bg-white relative flex items-center w-full justify-between">
@@ -16,6 +18,7 @@ export default function Header() {
           <button
             type="button"
             className="text-white bg-green-600 rounded flex items-center justify-evenly w-32 h-9 text-xs"
+            onClick={() => setShowModal(true)}
           >
             <FaPlus />
             سوال جدید
@@ -30,6 +33,7 @@ export default function Header() {
           </div>
         </div>
       </nav>
+      {showModal ? <NewQuestionModal setShowModal={setShowModal}/> : null}
     </div>
   );
 }
