@@ -15,10 +15,9 @@ const mockData = {
   body: "متغیر ENV رو تو فایلت تغییر بده درست میشه.",
 };
 
-export default function Answers() {
+export default function Answer() {
   return (
-    <div>
-      <div className="m-14 rounded-lg bg-gray-100 shadow">
+      <div className="mb-14 rounded-lg bg-gray-100 shadow">
         <div className="bg-white flex justify-between px-2 h-12 rounded-lg">
           <div className="flex justify-between my-2">
             <img src={mockData.userProfilePic} className="w-8 h-8 rounded-lg" />
@@ -70,6 +69,5 @@ export default function Answers() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
