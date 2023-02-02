@@ -1,0 +1,51 @@
+{
+    "questions": [
+        {
+            "id": "q1",
+            "uid": "u1",
+            "title": "مشکل در Auth در React",
+            "body": "",
+            "createdAt": 1651753080,
+            "summary": "سلام من می خوام یه Athintication ساده توی React بسازم اما این error رو بهم میده.نمیدونم مشکل از کجاست.عکس خروجی console رو هم گذاشتم که ببینید دقیق چه مشکلی وجود داره."
+        }
+    ],
+    "answers": [
+      {
+        "id": "a1",
+        "qid": "q1",
+        "userName": "علی کیا",
+        "userProfilePic": "user4.png",
+        "body": "",
+        "upVotes": 0,
+        "downVotes": 0,
+        "createdAt": 1651753080
+      },
+      {
+        "id": "a2",
+        "qid": "q1",
+        "userName": "محسن افشاری",
+        "userProfilePic": "user1.png",
+        "body": "",
+        "upVotes": 0,
+        "downVotes": 0,
+        "createdAt": 1651753080
+      }
+    ],
+    "users": [
+        {
+            "id": "u1",
+            "name": "الناز شاکردوست",
+            "profilePic": "elnaz.png"
+        },
+        {
+            "id": "u2",
+            "name": "علی کیا",
+            "profilePic": "user4.png"
+        },
+        {
+          "id": "u3",
+          "name": "محسن افشاری",
+          "profilePic": "user1.png"
+        }
+    ]
+}
