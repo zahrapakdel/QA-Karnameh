@@ -40,7 +40,7 @@ export default function QuestionSummary({showBody, question}) {
         </div>
       </div>
       {showBody ? (
-        <div>this is body</div>
+        <div className="p-4 text-sm">{question.body}</div>
       ) : (
         <div className="flex flex-col">
           <div className="text-sm px-4 py-5">{question.summary}</div>
