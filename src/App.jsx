@@ -1,15 +1,19 @@
-import { useState } from 'react'
-import Header from './components/Header';
-import { Route } from 'react-router-dom'
+import { useState } from "react";
+import Header from "./components/Header";
+import { Route, Routes } from "react-router-dom";
+import Questions from "./pages/Questions";
+import QuestionDetails from "./pages/QuestionDetails";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className='bg-red-500 h-full font-yekan' >
-      <Header/>
+    <div className="h-full font-yekan">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Questions />}></Route>
+        <Route path="/question/:qid" element={<QuestionDetails />}></Route>
+      </Routes>
     </div>
   );
 }
 
-export default App
+export default App;

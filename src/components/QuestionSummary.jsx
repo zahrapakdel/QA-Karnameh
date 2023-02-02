@@ -1,5 +1,7 @@
 import React from 'react'
 import { BiCommentDetail } from "react-icons/bi";
+import { Link } from 'react-router-dom';
+import {toFarsiNumber} from "../util"
 
 const mockData = {
   profilePicUrl: "../../public/user4.png",
@@ -15,16 +17,6 @@ const mockData = {
   questionContent:
     "سلام من میخوام یه authentication ساده تو react بسازم اما این error رو بهم میده. نمیدونم مشکل از کجاست. عکس خروجی console رو هم گذاشتم که ببینید دقیقا چه مشکلی وجود داره",
 };
-
-function toFarsiNumber(n) {
-  const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
-
-  return n
-    .toString()
-    .split("")
-    .map((x) => farsiDigits[x])
-    .join("");
-}
 
 export default function QuestionSummary() {
   return (
@@ -60,12 +52,12 @@ export default function QuestionSummary() {
       <div className="flex flex-col">
         <div className="text-sm px-4 py-5">{mockData.questionContent}</div>
         <div className="self-end p-4">
-          <button
-            type="button"
+          <Link
+            to="/question/123"
             className="text-green-600 border-2 border-green-600 rounded  items-center  w-28 h-9 text-xs"
           >
             مشاهده جزییات
-          </button>
+          </Link>
         </div>
       </div>
     </div>
