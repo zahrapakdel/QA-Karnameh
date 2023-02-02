@@ -4,7 +4,7 @@ import QuestionSummary from "../components/QuestionSummary";
 export default function Questions() {
   return (
     <div>
-      <QuestionSummary />
+      <QuestionSummary showBody={false}/>
     </div>
   );
 }
