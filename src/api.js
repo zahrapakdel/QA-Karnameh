@@ -36,3 +36,25 @@ export const postAnswers = async (answer) => {
     payload: { activeQuestion: { ...question, answers } },
   });
 };
+
+export const putUpVote = async (answer) => {
+    const res = axios.put(url("answers/"+answer.id), { ...answer, upVotes: answer.upVotes + 1 })
+    const answers = (await axios.get(url(`answers?qid=${answer.qid}`))).data;
+
+    const question = store.getState().activeQuestion;
+    store.dispatch({
+      type: setActiveQuestion,
+      payload: { activeQuestion: { ...question, answers } },
+    });
+}
+
+export const putDownVote = async (answer) => {
+  const res = axios.put(url("answers/"+answer.id), { ...answer, downVotes: answer.downVotes + 1 });
+  const answers = (await axios.get(url(`answers?qid=${answer.qid}`))).data;
+
+  const question = store.getState().activeQuestion;
+  store.dispatch({
+    type: setActiveQuestion,
+    payload: { activeQuestion: { ...question, answers } },
+  });
+};
